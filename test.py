@@ -1,7 +1,16 @@
 import sqlite3
 
 # Replace '/path/to/firefox/profile'
-profile_folder = '/Users/rocke/AppData/Roaming/Mozilla/Firefox/Profiles/rs9enx0g.default-release'
+#profile_folder = '/Users/rocke/AppData/Roaming/Mozilla/Firefox/Profiles/rs9enx0g.default-release'
+#specific user profile
+import os
+x = os.environ['USERPROFILE']
+user = x[9:]
+print(user)
+
+profile_folder = '/Users/' + user + '/AppData/Roaming/Mozilla/Firefox/Profiles/6hjvnf5j.default-release'
+print(profile_folder)
+
 cookie_file = profile_folder + '/cookies.sqlite'
 
 # Connect to the SQLite
