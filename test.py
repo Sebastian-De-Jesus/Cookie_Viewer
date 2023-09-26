@@ -6,10 +6,15 @@ import sqlite3
 import os
 x = os.environ['USERPROFILE']
 user = x[9:]
-print(user)
-
+#print(user)
 profile_folder = '/Users/' + user + '/AppData/Roaming/Mozilla/Firefox/Profiles/6hjvnf5j.default-release'
-print(profile_folder)
+#print(profile_folder)
+
+import glob
+pattern = '/Users/' + user + '/AppData/Roaming/Mozilla/Firefox/Profiles/*.default-release'
+matching_paths = glob.glob(pattern)
+for path in matching_paths:
+    print("Matching Path:", path)
 
 cookie_file = profile_folder + '/cookies.sqlite'
 
