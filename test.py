@@ -55,6 +55,9 @@ for cookie in cookies:
 
 # with open("cookieNamesCsv.txt", "w") as file:
 # file.write(x)
+for key in result:
+    print(f"This is the key : '{key}' and this is the value : '{result[key]}")
+    with open("result.txt","a") as file:
+        file.write(f"{str(key)} : {str(result[key])}\n")
 
-print(result)
 conn.close()
