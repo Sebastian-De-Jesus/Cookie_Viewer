@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "description": "",
+  "homepage_url": "https://github.com/",
+  "author": "Mike Thai",
+  "name": "Cookie Viewer",
+  "version": "0",
+  "default_locale": "en",
+  "permissions": ["cookies","<all_urls>","activeTab", "storage", "browsingData", "contextualIdentities", "privacy"],
+  "optional_permissions": ["clipboardWrite"],
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Cookie Quick Manager",
+    "default_popup": "menu.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "96": "icons/icon96.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  },
+  "background": {
+    "scripts": ["api.js", "background-script.js"]
+  }
+}
