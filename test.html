@@ -2,33 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    /* link rel="stylesheet" href="test.css" />*/
+    
     <style>
-        {
-            box-sizing: border-box;
-        }
+        
         /* Set additional styling options for the columns*/
-        .column {
-        float: left;
-        width: 50%;
+        
+          
+          .column {
+            float: left;
+            
+            height: 500px;
+          }
+        
+        .left {
+            width: 25%;
+            }
+            
+        .right {
+        width: 75%;
         }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            width: 700px
+          }
+          
     </style>
   </head>
 
   <body>
     <div id="popup-content">
-        <div class="column" style="background-color:#FFB695;">
-            <h2>Column 1</h2>
-            <p>Data..</p>
+        <div class="row">
+            <div class="column left" style="background-color:#FFB695;">
+                <h2>Cookie</h2>
+                <p>Doe</p>
+            </div>
+            <div class="column right" style="background-color:#96D1CD;">
+                <h2>Usage</h2>
+                <p>Data..</p>
+            </div>
         </div>
-        <div class="column" style="background-color:#96D1CD;">
-            <h2>Column 2</h2>
-            <p>Data..</p>
-        </div>
-    </div>
-    <div id="error-content" class="hidden">
-      <p>Can't beastify this web page.</p>
-      <p>Try a different page.</p>
+        
     </div>
     <script src="test.js"></script>
   </body>
