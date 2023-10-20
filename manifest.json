@@ -10,10 +10,21 @@
     },
     "permissions": ["activeTab"],
   
+    "background": {
+      "scripts": ["test5.js"]
+    },
+
+    "content_scripts": [
+      {
+        "matches" : ["<all_urls>"],
+        "js": ["test5.js"]
+      }
+    ],
+
     "browser_action": {
       "default_icon": "icons/border-48.png",
       "default_title": "Beastify",
-      "default_popup": "popup/test.html"
+      "default_popup": "test3.html"
     }, 
     "web_accessible_resources": [
       "beasts/frog.jpg",
@@ -22,4 +33,3 @@
       "cookie-database.csv"
     ]
 }
-  

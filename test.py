@@ -1,27 +1,33 @@
-# Replace '/path/to/firefox/profile'
-#profile_folder = '/Users/Mike/AppData/Roaming/Mozilla/Firefox/Profiles/6hjvnf5j.default-release'
-
-#print(user)
-#profile_folder = '/Users/' + user + '/AppData/Roaming/Mozilla/Firefox/Profiles/6hjvnf5j.default-release'
-#print(profile_folder)
-#cookie_file = profile_folder + '/cookies.sqlite'
-
-
-
-
-# Libray to access cookie file as database
+import pandas as pd
 import sqlite3
-
-# Access computer profile name
+import glob
 import os
+import json
+import numpy as np
+from os.path import *
+
+
+
+def clear_file(fileName = None):
+    #Checks if results exisits deletes its contents if it does.
+    if exists("result.txt"):
+        with open("result.txt", "w") as file:
+            file.truncate(0)
+
+
+
+#Finding the users correct USER name that will be needed in order to find that users file path for cookies
 x = os.environ['USERPROFILE']
 user = x[9:]
 
-# Search for specific files and folders
-import glob
+#Here we are using pattern recogintion in order for out file to find the correct cookie path for users
+# additionally saves the value to a variable called profile_folder
 pattern = '/Users/' + user + '/AppData/Roaming/Mozilla/Firefox/Profiles/*.default-release/cookies.sqlite'
 matching_paths = glob.glob(pattern)
 profile_folder = matching_paths[0]
+
+#prints out the users folder path for the cookies folder for firefox
+print(f"{profile_folder}\n")
 
 # Connect to the SQLite
 conn = sqlite3.connect(profile_folder)
@@ -29,41 +35,64 @@ cursor = conn.cursor()
 
 # Cookie Request
 cursor.execute("SELECT name, value, host, path, expiry FROM moz_cookies")
-#cursor.execute("SELECT name FROM moz_cookies")
 
 # Find all cookies
 cookies = cursor.fetchall()
 
-# Create dataframe from cookie database
-import pandas as pd
-database = pd.read_csv('cookie-database.csv')
-x = list(database.iloc[:, 3:4].values)
-y = list(database.iloc[:, 5:6].values)
+cookies_files = pd.read_csv("cookie-database.csv")
+x = cookies_files.iloc[:, 3].values
+y = list(cookies_files.iloc[:, 5].values)
 
-# Blank container for cookies
-result = dict()
+# Loop through all cookies and verifies which ones we have found within our 
+# cookie database, saves the found cookies to a dictionary called result
 
-# Loop through all cookies
+container = []
 for cookie in cookies:
     name, value, host, path, expiry = cookie
+    
     i = 0
     for search in x:
         if name == search:
-            temp = y[i]
-            result.update({name:y[i]})
-        i+=1
-        
-    #print(f"Name: {name}")  
-    #print(f"Value: {value}")
-    #print(f"Domain: {host}")
-    #print(f"Path: {path}")
-    #print(f"Expires: {expiry}")
-    
-print(result)
+            result = dict()
+            result.update({'NAME': name})
+            result.update({'PURPOSE': y[i]})
+            container.append(result)
+        i += 1
 
-# Close the database connection
+
+clear_file(fileName="result.txt")
+
+#This will print out your print out your cookie values aswell as thier uses to your terminal
+#additionally this will also write the found values to a .txt file for use later
+for key in result:
+    #Line below prints out to the terminal the cookie:function
+    #print(f"This is the key : '{key}' and this is the value : '{result[key]}") 
+           
+    #writes new contents to results
+    with open("result.txt","a") as file:
+        file.write(f"{str(key)} : {str(result[key])}\n")
+
+#Attempting to remove the "[, ] characters from our file and writing back the altered lines"
+symbol_remove = ['[',']',"'",'"']
+with open("result.txt","r") as file: 
+    lines = file.readlines()
+ 
+#Next three lines allows us to remove all unwanted charaters from out cookie:function txt
+for i in range(len(lines)):
+    for symbol in symbol_remove:
+        lines[i] = lines[i].replace(symbol, '')
+
+#writes the changes back to our result.txt for cleaner output.
+with open("result.txt", 'w') as file:
+    file.writelines(lines)
+
+json_obj = json.dumps(container, indent=4)
+with open("test.json", "w") as outfile:
+    outfile.write(json_obj)
+    
 conn.close()
 
-
+df = pd.DataFrame.from_dict(container)
+df.to_html('test3.html')
 
  
