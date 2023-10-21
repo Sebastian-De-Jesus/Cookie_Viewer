@@ -1,0 +1,66 @@
+[
+    {
+        "NAME": "OTZ",
+        "PURPOSE": "Aggregate analysis of website visitors"
+    },
+    {
+        "NAME": "OTZ",
+        "PURPOSE": "Aggregate analysis of website visitors"
+    },
+    {
+        "NAME": "AEC",
+        "PURPOSE": "AEC cookies ensure that requests within a browsing session are made by the user, and not by other sites. These cookies prevent malicious sites from acting on behalf of a user without that user\u2019s knowledge."
+    },
+    {
+        "NAME": "_ga",
+        "PURPOSE": "ID used to identify users"
+    },
+    {
+        "NAME": "_gid",
+        "PURPOSE": "ID used to identify users for 24 hours after last activity"
+    },
+    {
+        "NAME": "DV",
+        "PURPOSE": "This cookies is used to collect website statistics and track conversion rates and Google ad personalisation"
+    },
+    {
+        "NAME": "_ga",
+        "PURPOSE": "ID used to identify users"
+    },
+    {
+        "NAME": "_gid",
+        "PURPOSE": "ID used to identify users for 24 hours after last activity"
+    },
+    {
+        "NAME": "__Host-GAPS",
+        "PURPOSE": "Used to sign in with Google account."
+    },
+    {
+        "NAME": "NID",
+        "PURPOSE": "This cookies is used to collect website statistics and track conversion rates and Google ad personalisation"
+    },
+    {
+        "NAME": "muc_ads",
+        "PURPOSE": "These cookies are placed when you come to our website via X. A cookie from X is also placed on our website, with which we can later show a relevant offer on X"
+    },
+    {
+        "NAME": "NID",
+        "PURPOSE": "This cookies is used to collect website statistics and track conversion rates and Google ad personalisation"
+    },
+    {
+        "NAME": "OGPC",
+        "PURPOSE": "These cookies are used by Google to store user preferences and information while viewing Google mapped pages."
+    },
+    {
+        "NAME": "NID",
+        "PURPOSE": "This cookies is used to collect website statistics and track conversion rates and Google ad personalisation"
+    },
+    {
+        "NAME": "OGP",
+        "PURPOSE": "This cookie is used by Google to activate and track the Google Maps functionality."
+    },
+    {
+        "NAME": "1P_JAR",
+        "PURPOSE": "These cookies are set via embedded youtube-videos. They register anonymous statistical data on for example how many times the video is displayed and what settings are used for playback."
+    }
+]

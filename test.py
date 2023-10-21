@@ -60,6 +60,25 @@ for cookie in cookies:
         i += 1
 
 
+# Create json file for javascript, to create table from javascript, 1st option
+json_obj = json.dumps(container, indent=4)
+with open("result.json", "w") as outfile:
+    outfile.write(json_obj)
+
+# Create html table, can be used directly in extension popup, 2nd option
+df = pd.DataFrame.from_dict(container)
+df.to_html('result.html')
+
+
+
+
+
+
+
+
+
+
+
 clear_file(fileName="result.txt")
 
 #This will print out your print out your cookie values aswell as thier uses to your terminal
@@ -86,13 +105,10 @@ for i in range(len(lines)):
 with open("result.txt", 'w') as file:
     file.writelines(lines)
 
-json_obj = json.dumps(container, indent=4)
-with open("test.json", "w") as outfile:
-    outfile.write(json_obj)
-    
+
+
 conn.close()
 
-df = pd.DataFrame.from_dict(container)
-df.to_html('test3.html')
+
 
  
