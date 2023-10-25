@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Test",
+    "version": "1.0",
+  
+    "description": "Adds a red border to all webpages matching mozilla.org.",
+  
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+    "permissions": ["activeTab"],
+  
+    "background": {
+      "scripts": ["test5.js"]
+    },
+
+    "content_scripts": [
+      {
+        "matches" : ["<all_urls>"],
+        "js": ["test5.js"]
+      }
+    ],
+
+    "browser_action": {
+      "default_icon": "icons/border-48.png",
+      "default_title": "Beastify",
+      "default_popup": "test3.html"
+    }, 
+    "web_accessible_resources": [
+      "beasts/frog.jpg",
+      "beasts/turtle.jpg",
+      "beasts/snake.jpg",
+      "cookie-database.csv"
+    ]
+}
