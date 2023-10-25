@@ -2,14 +2,9 @@ import pandas as pd
 import sqlite3
 import glob
 import os
-<<<<<<< HEAD
-import csv
-=======
 import json
 import numpy as np
->>>>>>> 237d3526c6d08bc14b80bd74bbe4a8e2fec4d326
 from os.path import *
-
 
 
 def clear_file(fileName = None):
@@ -44,7 +39,6 @@ cursor.execute("SELECT name, value, host, path, expiry FROM moz_cookies")
 cookies = cursor.fetchall()
 
 cookies_files = pd.read_csv("cookie-database.csv")
-<<<<<<< HEAD
 x = cookies_files.iloc[:, 3:4].values
 y = list(cookies_files.iloc[:, 5:6].values)
 
@@ -87,7 +81,6 @@ for i in range(len(lines)):
 with open("result.txt", 'w') as file:
     file.writelines(lines)
     
-=======
 x = cookies_files.iloc[:, 3].values
 y = list(cookies_files.iloc[:, 5].values)
 
@@ -154,8 +147,6 @@ with open("result.txt", 'w') as file:
     file.writelines(lines)
 
 
-
->>>>>>> 237d3526c6d08bc14b80bd74bbe4a8e2fec4d326
 conn.close()
 
 
