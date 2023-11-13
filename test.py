@@ -4,7 +4,7 @@ import glob
 import os
 import csv
 from os.path import *
-
+import platform
 
 
 def clear_file(fileName = None):
@@ -14,6 +14,16 @@ def clear_file(fileName = None):
             file.truncate(0)
 
 
+
+# Get the system's platform
+current_platform = platform.system()
+
+if current_platform == "Windows":
+    print("Running on a Windows machine.")
+elif current_platform == "Darwin":
+    print("Running on a Mac machine.")
+else:
+    print("Running on a different operating system.")
 
 #Finding the users correct USER name that will be needed in order to find that users file path for cookies
 x = os.environ['USERPROFILE']
