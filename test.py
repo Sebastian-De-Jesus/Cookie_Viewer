@@ -113,9 +113,17 @@ def execute_scan():
     except Exception as e:
         # Handle any exceptions or errors that may occur during execution
         show_custom_message(str(e), "Error", 40, 10)
+
+# Function to confirm program exit when the user clicks the X button
+def on_closing():
+    if messagebox.askokcancel("Exit", "Do you want to exit the program?"):
+        root.destroy()
 # Create the main application window
 root = tk.Tk()
 root.title("Cookie Scanner")
+
+# Bind the on_closing function to the window's close event
+root.protocol("WM_DELETE_WINDOW", on_closing)
 
 # Create a variable to hold the radio button selection
 scan_option = tk.IntVar()
