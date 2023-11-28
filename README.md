@@ -34,7 +34,9 @@ The main usage of this application is to inspect the cookies that are currently 
 # roadmap
 Our future looks bright we will be implementing the following early _2024_ : 
     Functionallity across multiple **Operating Systems** 
+
     Instructions on how to clear your _browser history_ and _cookie blockers_
+    
     Cleaner & Better looking UI
 
 # acknowlegments 
