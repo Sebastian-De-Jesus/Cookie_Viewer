@@ -122,15 +122,13 @@ def show_result_content():
 
     result_window = tk.Toplevel(root)
     result_window.title("Scan Results")
-    result_window.resizable(True,True)
+    result_window.geometry("625x400")
 
     text_widget = tk.Text(result_window, wrap=tk.WORD, width=50, height=20)
-    text_widget.insert(tk.END, content)
     text_widget.pack()
 
     # Bind the event handler to the <Configure> event of the result window
     result_window.bind("<Configure>", lambda event: update_result_window_size(event, text_widget))
-
 
     # Split the content into lines
     lines = content.split("\n")
@@ -158,7 +156,6 @@ def show_result_content():
     # Disable text editing
     text_widget.config(state=tk.DISABLED)
 
-
 def update_result_window_size(event, text_widget):
     text_widget.config(width=event.width // 8, height=event.height // 16)
 
@@ -170,22 +167,33 @@ def on_closing():
 root = tk.Tk()
 root.title("Cookie Scanner")
 
+#setting up our size for the window
+root.geometry("625x280")
+
+# Allowing our window to also be resized
+root.resizable(True,True)
+
 # Bind the on_closing function to the window's close event
 root.protocol("WM_DELETE_WINDOW", on_closing)
 
-# Create a variable to hold the radio button selection
-scan_option = tk.IntVar()
-scan_option.set(0)  # Initialize to 0 (no selection)
+# Create a Text widget to explaining what a cookie is and how it can be used to a user
+cookie_text = tk.Text(root, wrap=tk.WORD, width=60, height=10)
+cookie_text.insert(tk.END,  "What is a COOKIE you might ask well allow us to explain!\n"
+                            "A cookie is a small piece of data stored on your computer by websites you visit.\n"
+                            "They are used to remember your preferences and provide a better browsing experience.\n"
+                            "As well as TRACK you, identify your SPENDING habits, and better TARGET you.\n"
+                            "By clicking Execute below we will see what cookies are on your system.")
 
-# Create the "Scan" radio button
-scan_radio = tk.Radiobutton(root, text="Scan", variable=scan_option, value=1)
+#Disabling a user from editing the text
+cookie_text.config(state=tk.DISABLED) 
 
+cookie_text.grid(row=0, padx=10, pady=10)
 # Create a button to execute the scan when clicked
-scan_button = tk.Button(root, text="Execute Scan", command=execute_scan)
-
+scan_button = tk.Button(root, text="Execute Scan", command=execute_scan,width=40,bg="red",fg="white")
+scan_button.grid(row=1)
 # Place the radio button and button in the window
-scan_radio.pack()
-scan_button.pack()
+
+scan_button.grid(row=1)
 
 # Start the GUI main loop
 root.mainloop()
