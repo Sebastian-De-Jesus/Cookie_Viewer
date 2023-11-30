@@ -122,10 +122,45 @@ def show_result_content():
 
     result_window = tk.Toplevel(root)
     result_window.title("Scan Results")
+    result_window.resizable(True,True)
 
     text_widget = tk.Text(result_window, wrap=tk.WORD, width=50, height=20)
     text_widget.insert(tk.END, content)
     text_widget.pack()
+
+    # Bind the event handler to the <Configure> event of the result window
+    result_window.bind("<Configure>", lambda event: update_result_window_size(event, text_widget))
+
+
+    # Split the content into lines
+    lines = content.split("\n")
+
+    # Loop through each line
+    for line in lines:
+        # Find the index of the first ":"
+        colon_index = line.find(":")
+
+        if colon_index != -1:
+            # Text before ":"
+            cookie_name = line[:colon_index]
+            # Text after ":"
+            cookie_description = line[colon_index + 1:]
+
+            # Insert the cookie name and description
+            text_widget.insert(tk.END, cookie_name, ("cookie_name",))
+            text_widget.insert(tk.END, ":")
+            text_widget.insert(tk.END, cookie_description)
+            text_widget.insert(tk.END, "\n")
+
+    # Configure a tag to highlight cookie names
+    text_widget.tag_configure("cookie_name", foreground="blue", font=("Arial", 12, "bold"))
+
+    # Disable text editing
+    text_widget.config(state=tk.DISABLED)
+
+
+def update_result_window_size(event, text_widget):
+    text_widget.config(width=event.width // 8, height=event.height // 16)
 
 # Function to confirm program exit when the user clicks the X button
 def on_closing():
