@@ -122,6 +122,7 @@ def show_result_content():
 
     result_window = tk.Toplevel(root)
     result_window.title("Scan Results")
+    result_window.geometry("625x400")
 
     text_widget = tk.Text(result_window, wrap=tk.WORD, width=50, height=20)
     text_widget.pack()
