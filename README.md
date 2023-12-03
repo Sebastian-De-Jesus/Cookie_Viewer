@@ -18,7 +18,7 @@
 - [Acknowledgments](#acknowledgments)
 - [Demo](#demo)
 - [Release Notes](#release)
-
+- [Usage Terms](#usage)
 # project-description
 Our project is a _python.exe_ that can be ran on windows machines that our using firefox as their primary browser. The purpose of this project is to educate users on what cookies have been collected on their browsers. These cookies are highlighted and described to users for better understanding of what each specific cookie found on their system is doing. Our goal is simple, and this is to **Educate** users on how their browsing data is being collected and used. 
 
@@ -28,6 +28,7 @@ There are two methods for installation of this application.
 _First_ Method copy this github repo onto your system and install the necessary library for example <sup> tkinter </sup>.
 
 _Second_ Method is to download the exacutable -> _ https://github.com/Sebastian-De-Jesus/Cookie_Viewer/blob/main/dist/cookie.exe _
+
     **THE ABOVE LINK IS FOR WINDOWS ONLY**
 - Save the downloaded file to a location of your choice on your computer.
 - Double-click the downloaded file to run the Cookie Scanner application.
@@ -55,3 +56,10 @@ Contributors to this Project are :
 - Mike Thai
 - Joseph Cardenas
 - Sebastian Reyes
+
+# usage
+
+Cookie Scanner is free and open-source software, and it is provided for the benefit of the community. You are welcome to use, modify, and distribute this application without any restrictions. Feel free to tailor it to your needs and share it with others.
+
+Your support and collaboration make Cookie Scanner even better for everyone.
+
