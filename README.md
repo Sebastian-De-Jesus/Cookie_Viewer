@@ -17,6 +17,7 @@
 - [Roadmap](#roadmap)
 - [Acknowledgments](#acknowledgments)
 - [Demo](#demo)
+- [Release Notes](#release)
 
 # project-description
 Our project is a _python.exe_ that can be ran on windows machines that our using firefox as their primary browser. The purpose of this project is to educate users on what cookies have been collected on their browsers. These cookies are highlighted and described to users for better understanding of what each specific cookie found on their system is doing. Our goal is simple, and this is to **Educate** users on how their browsing data is being collected and used. 
@@ -26,7 +27,12 @@ There are two methods for installation of this application.
 
 _First_ Method copy this github repo onto your system and install the necessary library for example <sup> tkinter </sup>.
 
-_Second_ Method is to download the exacutable -> 
+_Second_ Method is to download the exacutable -> _ https://github.com/Sebastian-De-Jesus/Cookie_Viewer/blob/main/dist/cookie.exe _
+    **THE ABOVE LINK IS FOR WINDOWS ONLY**
+- Save the downloaded file to a location of your choice on your computer.
+- Double-click the downloaded file to run the Cookie Scanner application.
+- Follow the on-screen instructions to use the application.
+    
 
 # usage
 The main usage of this application is to inspect the cookies that are currently stored on your systems browser history. These files can often be found manually in by following the file path such as : **_'/Users/' + user + '/AppData/Roaming/Mozilla/Firefox/Profiles/*.default-release/cookies.sqlite'_** where _user_ is the specific profile you wish to examine.
@@ -39,6 +45,13 @@ Our future looks bright we will be implementing the following early _2024_ :
     
     Cleaner & Better looking UI
 
-# acknowlegments 
+# release
+### Release Notes
 
-# demo
+- **Version 1.0 (Date)**: Initial release.
+
+# acknowlegments 
+Contributors to this Project are : 
+- Mike Thai
+- Joseph Cardenas
+- Sebastian Reyes
