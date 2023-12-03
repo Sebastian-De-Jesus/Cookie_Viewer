@@ -64,8 +64,11 @@ def execute_scan():
         # Get the path to the directory where the script is located
         script_dir = os.path.dirname(os.path.abspath(__file__))
 
+        # Specify the relative path to the data folder
+        data_folder = os.path.join(script_dir, "data")
+
         # Specify the relative path to the .csv file
-        csv_file_path = os.path.join(script_dir, "cookie-database.csv")
+        csv_file_path = os.path.join(data_folder, "cookie-database.csv")
 
         # Find all cookies
         cookies = cursor.fetchall()
