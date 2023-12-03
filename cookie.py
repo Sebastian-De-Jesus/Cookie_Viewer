@@ -59,10 +59,18 @@ def execute_scan():
         # Cookie Request
         cursor.execute("SELECT name, value, host, path, expiry FROM moz_cookies")
 
+        #Finding the relative path to the directory for the EXE file to function.
+
+        # Get the path to the directory where the script is located
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Specify the relative path to the .csv file
+        csv_file_path = os.path.join(script_dir, "cookie-database.csv")
+
         # Find all cookies
         cookies = cursor.fetchall()
 
-        cookies_files = pd.read_csv("cookie-database.csv")
+        cookies_files = pd.read_csv(csv_file_path)
         x = cookies_files.iloc[:, 3:4].values
         y = list(cookies_files.iloc[:, 5:6].values)
 
