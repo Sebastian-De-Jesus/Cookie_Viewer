@@ -2,7 +2,6 @@ import pandas as pd
 import sqlite3
 import glob
 import os
-import csv
 from os.path import *
 import platform
 import tkinter as tk
