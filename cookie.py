@@ -8,10 +8,9 @@ import tkinter as tk
 from tkinter import messagebox
 
 def clear_file(fileName=None):
-    # Checks if results exists, deletes its contents if it does.
-    if exists("result.txt"):
-        with open("result.txt", "w") as file:
-            file.truncate(0)
+    # Create result.txt if not exists, deletes its contents if it does.
+    with open(fileName, "w") as file:
+        file.truncate(0)
 
 # Get the system's platform
 def current_system():
@@ -89,8 +88,7 @@ def execute_scan():
                 i += 1
 
 
-        # Clear the file
-        newfile = open("result.txt", "w")
+        clear_file(fileName="result.txt")
 
         # This will print out your cookie values as well as their uses to your terminal
         # additionally, this will also write the found values to a .txt file for use later
@@ -116,7 +114,6 @@ def execute_scan():
         with open("result.txt", 'w') as file:
             file.writelines(lines)
 
-        newfile.close()
         conn.close()
 
         # Display the content of result.txt in a Tkinter window
