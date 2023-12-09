@@ -6,7 +6,7 @@
 
 ## Authors: 
 - Mike Thai : 886590306 : miket126@csu.fullerton.edu
-- Joseph Cardenas
+- Joseph Cardenas : CWID 885886861 : jcardenas21@ccsu.fullerton.edu
 - Sebastian Reyes : CWID 886637420 : sreyes92@csu.fullerton.edu
 
 ## Table of Contents
