@@ -5,7 +5,7 @@
 - Class : CPSC 491
 
 ## Authors: 
-- Mike Thai : 886590306 : miket126@csu.fullerton.edu
+- Mike Thai : CWID 886590306 : miket126@csu.fullerton.edu
 - Joseph Cardenas : CWID 885886861 : jcardenas21@csu.fullerton.edu
 - Sebastian Reyes : CWID 886637420 : sreyes92@csu.fullerton.edu
 
