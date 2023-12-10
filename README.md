@@ -1,4 +1,4 @@
-# Cookie_Viewer Final Project 491
+# Cookie_Scanner Final Project 491
 - Professor: Dr. Lida Morrison
 - Department of Computer Science 
 - California State University, Fullerton
