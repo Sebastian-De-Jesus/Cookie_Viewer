@@ -36,7 +36,7 @@ def show_custom_message(message, title, width, height):
 
 def execute_scan():
     try:
-        #Finding the users correct USER name that willpi be needed in order to find that users file path for cookies
+        #Finding the users correct USER name that will be needed in order to find that users file path for cookies
         current_system()
         x = os.environ['USERPROFILE']
         user = x[9:]
